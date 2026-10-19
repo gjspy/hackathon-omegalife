@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meadow House Repairs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+		<div class="flower-background">
+			<img src="AdobeStock_558848116.png">
+		</div>
+      <header class="welcome-hero" aria-labelledby="welcome-heading">
+        <div class="welcome-hero__image" aria-hidden="true"></div>
+        <div class="welcome-hero__content">
+          <p class="eyebrow">Meadow House care home</p>
+          <h1 id="welcome-heading">Welcome to Meadow House</h1>
+          <p class="header-copy">A calm and cared-for home where every repair is tracked clearly, reviewed promptly and kept in one place.</p>
+          <button type="button" class="primary-button hero-button" data-scroll-target="jobs-heading">View repair list</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="panel form-panel" aria-labelledby="report-heading">
+          <div class="panel-header">
+            <h2 id="report-heading">Report a repair</h2>
+          </div>
+
+          <form id="repair-form" novalidate>
+            <div class="field-group">
+              <label for="description">Repair description</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                maxlength="3000"
+                placeholder="Describe the issue to be repaired"
+                aria-describedby="description-error"
+              ></textarea>
+              <p id="description-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="reporter">Reported by</label>
+              <input
+                id="reporter"
+                name="reporter"
+                type="text"
+                maxlength="200"
+                placeholder="Name of the person reporting"
+                aria-describedby="reporter-error"
+              />
+              <p id="reporter-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="priority">Priority</label>
+              <select id="priority" name="priority" aria-label="Repair priority">
+                <option value="Normal">Normal</option>
+                <option value="Urgent">Urgent</option>
+              </select>
+            </div>
+
+            <div class="actions-row">
+              <button type="submit" class="primary-button">Create report</button>
+            </div>
+
+            <p id="form-success-message" class="form-confirmation" aria-live="polite"></p>
+          </form>
+
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel jobs-panel" aria-labelledby="jobs-heading">
+          <div class="panel-header">
+            <h2 id="jobs-heading">Repair jobs</h2>
+          </div>
+
+          <div class="jobs-toolbar" aria-label="Job filters and sorting">
+            <div class="toolbar-group">
+              <label for="status-filter">Status</label>
+              <select id="status-filter">
+                <option value="All">All</option>
+                <option value="New">New</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+
+            <div class="toolbar-group">
+              <label for="priority-filter">Priority</label>
+              <select id="priority-filter">
+                <option value="All">All</option>
+                <option value="Normal">Normal</option>
+                <option value="Urgent">Urgent</option>
+              </select>
+            </div>
+
+            <div class="toolbar-group">
+              <label for="sort-jobs">Sort by</label>
+              <select id="sort-jobs">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="urgent">Urgent first</option>
+                <option value="status">Status</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="jobs-list" class="jobs-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

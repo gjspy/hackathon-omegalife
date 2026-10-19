@@ -18,7 +18,7 @@ Option 1: open `index.html` directly in your browser.
 Option 2: serve the folder locally:
 
 ```bash
-cd c:/Users/mixan/Desktop/hackathon
+cd c:/Users/[user]/Desktop/hackathon
 python -m http.server 8000
 ```
 
